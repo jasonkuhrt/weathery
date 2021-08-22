@@ -3,6 +3,7 @@
   "version": "0.0.0-dripip",
   "repository": "git@github.com:jasonkuhrt/weathery.git",
   "author": "Jason Kuhrt",
+  "description": "See weather forecasts in your terminal.",
   "license": "MIT",
   "files": [
     "dist-cjs",
