@@ -4,6 +4,10 @@
   "repository": "git@github.com:jasonkuhrt/weathery.git",
   "author": "Jason Kuhrt",
   "description": "See weather forecasts in your terminal.",
+  "bin": {
+    "weathery": "./dist-cjs/cli",
+    "we": "./dist-cjs/cli"
+  },
   "license": "MIT",
   "files": [
     "dist-cjs",
@@ -25,6 +29,8 @@
   "main": "./dist-cjs/index.js",
   "module": "./dist-esm/index.js",
   "scripts": {
+    "cli": "ts-node ./src/cli",
+    "cli:build": "./dist-cjs/cli/index.js",
     "format": "yarn format:prettier && yarn format:imports",
     "format:prettier": "prettier --write .",
     "format:imports": "format-imports src && format-imports tests",
@@ -33,7 +39,7 @@
     "format:check:prettier": "prettier --check .",
     "lint": "eslint . --ext .ts,.tsx --fix",
     "lint:check": "eslint . --ext .ts,.tsx --max-warnings 0",
-    "dev": "yarn -s clean && ttsc --build --watch",
+    "dev": "yarn -s clean && ttsc --build --watch tsconfig.cjs.json tsconfig.esm.json",
     "build": "yarn -s clean && yarn build:cjs && yarn build:esm",
     "build:cjs": "ttsc --project tsconfig.cjs.json",
     "build:esm": "ttsc --project tsconfig.esm.json",
