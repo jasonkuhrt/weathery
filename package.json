@@ -51,6 +51,7 @@
     "prepublishOnly": "yarn -s build"
   },
   "dependencies": {
+    "got": "^11.8.2",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import { VisualCrossingApiClient } from '#visualCrossingApi'
+
 const envarSpecs = {
   VISUAL_CROSSING_WEATHER_API_KEY: {
     name: `VISUAL_CROSSING_WEATHER_API_KEY`,
@@ -12,3 +14,16 @@ if (!process.env[envarSpecs.VISUAL_CROSSING_WEATHER_API_KEY.name]) {
   )
   process.exit(1)
 }
+
+const client = new VisualCrossingApiClient({
+  // eslint-disable-next-line
+  apiKey: process.env[envarSpecs.VISUAL_CROSSING_WEATHER_API_KEY.name]!,
+})
+
+client
+  .forecast()
+  .then(console.log)
+  .catch((e) => {
+    console.error(e)
+    process.exit(1)
+  })
