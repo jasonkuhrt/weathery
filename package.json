@@ -5,8 +5,8 @@
   "author": "Jason Kuhrt",
   "description": "See weather forecasts in your terminal.",
   "bin": {
-    "weathery": "./dist-cjs/cli",
-    "we": "./dist-cjs/cli"
+    "weathery": "./dist-cjs/cli/index.js",
+    "we": "./dist-cjs/cli/index.js"
   },
   "license": "MIT",
   "files": [
